@@ -1,0 +1,240 @@
+---
+layout: default
+---
+{% include header.html %}
+<main id="fullpage">
+  <div class="section" id="about" data-anchor="aboutPage">
+    <div class="container">
+      <div class="content">
+        <h1>{{ site.data.about.title }}</h1>
+        <p>{{ site.data.about.text }}</p><a class="button" href="#contactsPage">contact us</a>
+      </div>
+      <span class="scroll-down">
+        <svg class="icon arrow">
+          <use xlink:href="#arrow"></use>
+        </svg>
+        begin<br>scrolling
+      </span>
+    </div>
+  </div>
+  <div class="section" id="works" data-anchor="worksPage">
+    <div class="container works">
+      <div class="container--row">
+        <div class="content">
+          <h1 class="works__headline">{{ site.data.works.title }}</h1>
+          <p class="works__text">{{ site.data.works.text }}</p>
+        </div><a class="button button--projects" href="portfolio.html">view all projects</a>
+      </div>
+      <div class="works__inner">
+        <div class="works__black"></div>
+        {% assign sorted_list = site.projects | sort: 'weight' %}
+        <div class="works__items">
+          {% for image in sorted_list limit: 4 %}
+            <a class="works__item" href="{{ image.link }}">
+              <img class="works__img" src="{{ image.image_path }}" alt="{{ image.title }}">
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="process" data-anchor="processPage">
+    <div class="container process">
+      <h1 class="process__headline">{{ site.data.process.title }}</h1>
+      <div class="process__inner">
+        <div class="process__item">
+          <h1 class="process__number">01.</h1>
+          <p class="process__text">{{ site.data.process.first }}</p>
+        </div>
+        <div class="process__item">
+          <h1 class="process__number">02.</h1>
+          <p class="process__text">{{ site.data.process.second }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="pricing" data-anchor="pricingPage">
+    <div class="container pricing">
+      <div class="pricing__tabs">
+        <h1 class="pricing__headline">{{ site.data.pricing.title }}</h1>
+        <a class="pricing__link is-active" href="#">{{ site.data.pricing.domestic.name }}
+          <span class="pricing__arrow">
+            <svg class="icon back">
+              <use xlink:href="#back"></use>
+            </svg>
+          </span>
+        </a>
+        <br>
+        <a class="pricing__link" href="#">{{ site.data.pricing.international.name }}
+          <span class="pricing__arrow">
+            <svg class="icon back">
+              <use xlink:href="#back"></use>
+            </svg>
+          </span>
+        </a>
+        <br>
+        <a class="pricing__link" href="#">{{ site.data.pricing.lookbook.name }}
+          <span class="pricing__arrow">
+            <svg class="icon back">
+              <use xlink:href="#back"></use>
+            </svg>
+          </span>
+        </a>
+        <br>
+        <a class="pricing__link" href="#">{{ site.data.pricing.smm.name }}
+          <span class="pricing__arrow">
+            <svg class="icon back">
+              <use xlink:href="#back"></use>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <div class="pricing__items is-open">
+        <div class="pricing__items__inner">
+          <div class="pricing__item is-active item">
+            <div class="item__header">
+              <a class="item__back" href="#">
+                <svg class="icon back">
+                  <use xlink:href="#back"></use>
+                </svg>
+              </a>
+              <h4 class="item__name">{{ site.data.pricing.domestic.result }}</h4>
+            </div>
+            <h4 class="item__price-title">Price:
+              <span class="item__price">{{ site.data.pricing.domestic.price }}</span>
+            </h4>
+            <h4 class="item__subtitle">Includes:</h4>
+            <ul class="item__list">
+              {% for include in site.data.pricing.domestic.includes %}
+                <li>{{ include }}</li>
+              {% endfor %}
+            </ul>
+            <p class="item__details">*Shipping costs for delivering products, goods are not included</p>
+            <h4 class="item__youget-title">You get:</h4>
+            <p class="item__youget">{{ site.data.pricing.domestic.get }}</p>
+          </div>
+          <div class="pricing__item item">
+            <div class="item__header">
+              <a class="item__back" href="#">
+                <svg class="icon back">
+                  <use xlink:href="#back"></use>
+                </svg>
+              </a>
+              <h4 class="item__name">{{ site.data.pricing.international.result }}</h4>
+            </div>
+            <h4 class="item__price-title">Price:
+              <span class="item__price">{{ site.data.pricing.international.price }}</span>
+            </h4>
+            <h4 class="item__subtitle">Includes:</h4>
+            <ul class="item__list">
+              {% for include in site.data.pricing.international.includes %}
+                <li>{{ include }}</li>
+              {% endfor %}
+            </ul>
+            <p class="item__details">*Shipping costs for delivering products, goods are not included</p>
+            <h4 class="item__youget-title">You get:</h4>
+            <p class="item__youget">{{ site.data.pricing.international.get }}</p>
+          </div>
+          <div class="pricing__item item">
+            <div class="item__header">
+              <a class="item__back" href="#">
+                <svg class="icon back">
+                  <use xlink:href="#back"></use>
+                </svg>
+              </a>
+              <h4 class="item__name">{{ site.data.pricing.lookbook.lookbook.result }}</h4>
+            </div>
+            <h4 class="item__price-title">Price:
+              <span class="item__price">{{ site.data.pricing.lookbook.lookbook.price }}</span>
+            </h4>
+            <h4 class="item__subtitle">Includes:</h4>
+            <ul class="item__list">
+              {% for include in site.data.pricing.lookbook.lookbook.includes %}
+                <li>{{ include }}</li>
+              {% endfor %}
+            </ul>
+            <h4 class="item__youget-title">You get:</h4>
+            <p class="item__youget">{{ site.data.pricing.lookbook.lookbook.get }}</p>
+            <div class="item__header">
+              <h4 class="item__name">{{ site.data.pricing.lookbook.catalogue.result }}</h4>
+            </div>
+            <h4 class="item__price-title item__price-title--second">Price:
+              <span class="item__price">{{ site.data.pricing.lookbook.catalogue.price }}</span>
+            </h4>
+            <h4 class="item__youget-title item__youget-title--second">You get:</h4>
+            <p class="item__youget">{{ site.data.pricing.lookbook.catalogue.get }}</p>
+          </div>
+          <div class="pricing__item item">
+            <div class="item__header">
+              <a class="item__back" href="#">
+                <svg class="icon back">
+                  <use xlink:href="#back"></use>
+                </svg>
+              </a>
+              <h4 class="item__name">{{ site.data.pricing.smm.result }}</h4>
+            </div>
+            <h4 class="item__price-title">Price:
+              <span class="item__price">{{ site.data.pricing.smm.price }}</span>
+            </h4>
+            <h4 class="item__subtitle">Facebook:</h4>
+            <ul class="item__list">
+              {% for include in site.data.pricing.smm.facebook.includes %}
+                <li>{{ include }}</li>
+              {% endfor %}
+            </ul>
+            <h4 class="item__subtitle">Instagram:</h4>
+            <ul class="item__list">
+              {% for include in site.data.pricing.smm.instagram.includes %}
+                <li>{{ include }}</li>
+              {% endfor %}
+            </ul>
+            <h4 class="item__youget-title">You get:</h4>
+            <p class="item__youget">{{ site.data.pricing.smm.get }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="contacts" data-anchor="contactsPage">
+    <div class="container contacts">
+      <div class="contacts__tabs">
+        <a class="contacts__tab is-active" href="#">{{ site.data.contacts.title }}</a>
+        <a class="contacts__tab" href="#">Feedback</a></div>
+      <div class="contacts__content contacts__tab-container is-active">
+        <h1 class="contacts__title">Get in touch<br>with us</h1>
+        <p class="contacts__text">{{ site.data.contacts.text }}</p>
+        <div class="contacts__items">
+          <p class="contacts__item">
+            <svg class="icon location">
+              <use xlink:href="#location"></use>
+            </svg>{{ site.data.contacts.location }}
+          </p>
+          <p class="contacts__item">
+            <svg class="icon phone">
+              <use xlink:href="#phone"></use>
+            </svg>{{ site.data.contacts.phone }}
+          </p>
+          <a class="contacts__item contacts__mail" href="mailto:{{ site.data.contacts.email }}">
+            <svg class="icon mail">
+              <use xlink:href="#mail"></use>
+            </svg>{{ site.data.contacts.email }}
+          </a>
+        </div>
+      </div>
+      <form class="contacts__form contacts__tab-container" method="POST" action="{{ site.data.contacts.email }}">
+        <h4 class="contacts__headline">Send a message</h4>
+        <div>
+          <input placeholder="Name">
+        </div>
+        <div>
+          <input placeholder="E - mail">
+        </div>
+        <div>
+          <textarea placeholder="Message" rows="5"></textarea>
+        </div>
+        <submit class="button button--form">send message</submit>
+      </form>
+    </div>
+  </div>
+</main>
+{% include footer.html %}

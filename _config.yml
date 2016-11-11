@@ -1,0 +1,17 @@
+#
+# This file contains configuration flags to customize your site
+#
+
+# Name of your site (displayed in the header)
+title: Apollo 14
+
+# Short bio or description (displayed in the header)
+description: Apollo 14 is a visual communication agency that provides services of photo and video shooting and other services connected with brand promotion.
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  facebook: https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/
+  instagram: https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/
+
+collections:
+  projects:

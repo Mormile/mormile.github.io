@@ -1,0 +1,68 @@
+title: Pricing
+domestic:
+  name: Domestic Video Shoot
+  result: Approximately 1-2 min video
+  price: $ 3500 +
+  includes:
+    - Creative concept
+    - Storyboard
+    - Operators work
+    - Model scouting and scheduling
+    - Location scouting and scheduling
+    - Make-up (if needed)
+    - Stylist
+    - Musical score
+    - Editing
+    - Final Delivery
+  get: 1 video up to 2 minutes with models in various locations, demonstrating your products / clothing etc. Also, it can be a Kickstarter presentation video for a product or service.
+international:
+  name: International Travel Video Shoot
+  result: Approximately 1-2 min video
+  price: $ 7000 +
+  includes:
+    - Creative concept
+    - Storyboard
+    - Operators work
+    - Model scouting and scheduling
+    - Location scouting and scheduling
+    - Make-up (if needed)
+    - Visa costs and transportation
+    - Stylist
+    - Musical score
+    - Editing
+    - Final Delivery
+  get: 1 video up to 2 minutes with models in various locations, demonstrating your products / clothing etc. Also, it can be a Kickstarter presentation video for a product or service.
+lookbook:
+  name: Lookbook or Catalogue Photo Shoot
+  lookbook:
+    result: Lookbook photo shoot
+    price: $ 1500 +
+    includes:
+      - Creative concept
+      - Photographers work
+      - Model scouting and scheduling
+      - Location scouting and scheduling
+      - Make-up (if needed)
+      - Stylist
+      - Retouch
+      - Final Delivery
+    get: up to 15 photos (varies).
+  catalogue:
+    result: Catalogue photo shoot
+    price: $ 800 +
+    get: up to 25 photos for website / Kickstarter campaign / press
+smm:
+  name: SMM Services
+  result: Services of SMM for Facebook and Instagram social media for 3 months
+  price: $ 1200 / mo
+  facebook:
+    includes:
+      - Posts campaign planning
+      - Posting and commenting, communicating with followers
+      - KPI planning and implementation
+  instagram:
+    includes:
+      - Posts campaign planning
+      - Posting and commenting, communicating with followers
+      - KPI planning and implementation
+  get: 4 posts per week, 8 hours per day support and communication

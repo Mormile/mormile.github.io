@@ -1,0 +1,43 @@
+<div class="portfolio">
+  <div class="portfolio__inner">
+    <div class="container container--modal">
+      <div class="portfolio__header">
+        <a class="header__logo" href="#aboutPage">
+          <svg class="icon logo">
+            <use xlink:href="#logo"></use>
+          </svg>
+        </a>
+        <a class="header__close header__close--portfolio" href="#">
+          <svg class="icon close">
+            <use xlink:href="#close"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="portfolio__description">
+        <h1 class="portfolio__title">{{ site.data.portfolio.title }}</h1>
+        <p class="portfolio__text">{{ site.data.portfolio.text }}</p>
+      </div>
+      <div class="portfolio__categories">
+        <a class="portfolio__category is-active" href="#">all</a>
+        <a class="portfolio__category" href="#">photo</a>
+        <a class="portfolio__category" href="#">video</a>
+        <a class="portfolio__category" href="#">lookbook</a>
+      </div>
+      {% assign sorted_list = site.projects | sort: 'weight' %}
+      <div class="portfolio__items">
+        {% for image in sorted_list %}
+          <a class="portfolio__item item--{{ image.category }}" href="{{ image.link }}">
+            <img class="portfolio__image" data-src="{{ image.image_path }}" alt="{{ image.title }}">
+          </a>
+        {% endfor %}
+      </div>
+      <div class="portfolio__loadmore">
+        <a class="button button--loadmore" href="#">
+          <svg class="icon loadmore">
+            <use xlink:href="#loadmore"></use>
+          </svg>load more
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
